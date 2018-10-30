@@ -14,7 +14,7 @@ def load_labeled(path, shuffle=True, random_state=42):
     for line in doc.split("\n"):
         if len(line) < 2:
             continue
-        if line[-1] == "n":
+        if line[-1] == "z":
             pass
         else:
             X_corpus.append(line[:-1])
