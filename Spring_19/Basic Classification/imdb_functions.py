@@ -67,9 +67,9 @@ def load_with_path(path=r"/Users/ekremguzelyel/Desktop/Assignments/Research/aclI
    X_train_corpus , y_train, X_test_corpus , y_test = load_imdb(path)
    return X_train_corpus , y_train, X_test_corpus , y_test
 
-def load_and_vectorize():
+def load_and_vectorize(path):
    # Load from path
-   path=r"/Users/ekremguzelyel/Desktop/Assignments/Research/aclImdb"
+#    path=r"/Users/ekremguzelyel/Desktop/Assignments/Research/aclImdb"
    X_train_corpus , y_train, X_test_corpus , y_test = load_imdb(path)
 
    # Vectorize the data
