@@ -10,5 +10,5 @@ Tasks:
     - Look for the data they use
     - Adapt it to current work
 - Back to the Future
-    - Implement LR and LSTM on IMDB
+    - ~~Implement LR and LSTM on IMDB~~
     - Make an Analysis
