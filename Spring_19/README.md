@@ -11,4 +11,6 @@ Tasks:
     - Adapt it to current work
 - Back to the Future
     - ~~Implement LR and LSTM on IMDB~~
-    - Make an Analysis
+    - ~~Make an Analysis~~
+- Review Decision Trees 
+    - Understand feature_importances_
