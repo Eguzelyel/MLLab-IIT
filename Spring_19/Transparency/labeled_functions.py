@@ -76,12 +76,11 @@ def load_labeled_neutrals(path, shuffle=True, random_state=42):
         
     return X_corpus, y
 
-def load_unlabeled(path, shuffle=True):
+def load_unlabeled(path, shuffle=True, random_state=42):
     import glob 
     labeled_file = glob.glob(path+"/UnlabeledEDUs.txt") 
     
     X_corpus = []
-    y = []
     
     f = open(labeled_file[0], 'r', encoding="utf8")
     doc = f.read()
@@ -98,10 +97,12 @@ def load_unlabeled(path, shuffle=True):
     
     if shuffle:
         np.random.seed(random_state)
-        indices = np.random.permutation(len(y))       
+        indices = np.random.permutation(len(X_corpus))       
         
         X_corpus = [X_corpus[i] for i in indices]
         
+
+    return X_corpus
 
 def load_with_path(path=r"/Users/ekremguzelyel/Desktop/Assignments/Research/MLLab-IIT/edu/models/"):
    X_corpus , y= load_labeled(path)
