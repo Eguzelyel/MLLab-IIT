@@ -1,4 +1,4 @@
-from sampler import UncertaintySampler
+from sampler import UncertaintySampler, RandomSampler
 
 def label(sampler):
     cont = "T" 
@@ -18,5 +18,5 @@ def label(sampler):
     
 
 if __name__ == '__main__':
-    sampler = UncertaintySampler()
+    sampler = RandomSampler()
     label(sampler)
