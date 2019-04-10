@@ -73,8 +73,43 @@ def load_labeled_neutrals(path, shuffle=True, random_state=42):
         X_corpus = [X_corpus[i] for i in indices]
         y = y[indices]
         
+    # ADD TEST DATA
+
+    test_file = glob.glob(path+"/test_random.txt") 
+    
+    test_corpus = []
+    test_y = []
+    
+    f = open(test_file[0], 'r', encoding="utf8")
+    doc = f.read()
+    for line in doc.split("\n"):
+        if len(line) < 2:
+            continue
+
+        test_corpus.append(line[:-1])
+        if line[-1] == "p":
+            test_y.append(1)
+        elif line[-1]== "z":
+            test_y.append(0)
+        else:
+            test_y.append(-1)
+    f.close()
+    
+
+    print("Test Data loaded.")
+    
+    test_y = np.array(test_y)
+    
+    if shuffle:
+        np.random.seed(random_state)
+        indices = np.random.permutation(len(test_y))       
         
-    return X_corpus, y
+        test_corpus = [test_corpus[i] for i in indices]
+        test_y = test_y[indices]
+        
+        
+        
+    return X_corpus, y, test_corpus, test_y
 
 def load_unlabeled(path, shuffle=True, random_state=42):
     import glob 
