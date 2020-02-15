@@ -37,8 +37,7 @@ class Sampler(object):
     
     def __init__(self):
         self.unlabeled = self.__read_unlabeled(r"UnlabeledEDUs.txt")
-#         self.labeled, self.labels = self.__read_labeled(r"labeledEDUs.txt")
-        self.labeled, self.labels = self.__read_labeled(r"test_random.txt")
+        self.labeled, self.labels = self.__read_labeled(r"labeledEDUs.txt")
         
     def sample(self, k): 
         raise AttributeError('base Sample class does not implement method sample()') 
@@ -50,10 +49,7 @@ class Sampler(object):
         with open(r"UnlabeledEDUS.txt", "w", newline='') as f: 
             for line in self.unlabeled: 
                 f.write(line)  
-#         with open(r"LabeledEDUS.txt", "w", newline='') as f: 
-#             for line in self.labeled: 
-#                 f.write(line)
-        with open(r"test_random.txt", "w", newline='') as f: 
+        with open(r"LabeledEDUS.txt", "w", newline='') as f: 
             for line in self.labeled: 
                 f.write(line) 
                 
