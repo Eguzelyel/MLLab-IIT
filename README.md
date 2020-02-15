@@ -10,3 +10,6 @@ Fall 2019:
 - Text Classification
 - EDU categorization
 - IMDB data analysis
+
+Spring 2020:
+- Learning with Rationales
